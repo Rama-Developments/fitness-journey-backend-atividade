@@ -39,7 +39,7 @@ public class UniqueEntityId<T> {
 
     public static UniqueEntityId generate(UniqueEntityIdType type) throws Exception {
 
-        return new UniqueEntityId<>(UniqueEntityIdType.UUID.equals(type) ? UUID.randomUUID() : count);
+        return new UniqueEntityId<>(UniqueEntityIdType.UUID.equals(type) ? UUID.randomUUID() : ++count);
     }
 
     private static UniqueEntityIdType getTypeByValue(Object value) throws Exception {

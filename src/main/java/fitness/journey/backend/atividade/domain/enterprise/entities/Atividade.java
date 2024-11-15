@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Atividade extends AbstractEntity<Long> {
+public class Atividade extends AbstractEntity {
 
     public String dsAtividade;
 }

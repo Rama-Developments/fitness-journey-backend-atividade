@@ -23,7 +23,8 @@ public class FetchAtividadesTest {
     void setup() {
 
         atividadeRepository = new InMemoryAtividadeRepository();
-        sut = new FetchAtividades(atividadeRepository);
+        sut = new FetchAtividades();
+        sut.setRepository(atividadeRepository);
     }
 
     @Test

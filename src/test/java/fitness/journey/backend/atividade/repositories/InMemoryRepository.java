@@ -28,8 +28,10 @@ public class InMemoryRepository<T extends AbstractEntity> implements IRepository
     }
 
     @Override
-    public void create(T entity) {
+    public T create(T entity) {
 
         this.items.add(entity);
+
+        return entity;
     }
 }

@@ -14,5 +14,5 @@ public interface IRepository<T> {
 
     T findById(UniqueEntityId id);
 
-    void create(T entity);
+    T create(T entity);
 }

@@ -1,9 +1,11 @@
-package fitness.journey.backend.atividade.application.http.controllers;
+package fitness.journey.backend.atividade.infrastructure.http.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fitness.journey.backend.atividade.domain.enterprise.entities.Atividade;
+import fitness.journey.backend.atividade.shared.http.controllers.AbstractController;
 import lombok.AllArgsConstructor;
 
 /**
@@ -13,7 +15,4 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("atividade")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class AtividadeController {
-
-
-}
+public class AtividadeController extends AbstractController<Atividade> {}
