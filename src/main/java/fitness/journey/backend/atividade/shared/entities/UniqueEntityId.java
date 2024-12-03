@@ -4,7 +4,10 @@ import static java.util.Objects.isNull;
 
 import java.util.UUID;
 
+import fitness.journey.backend.atividade.shared.exceptions.DomainException;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -13,21 +16,28 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UniqueEntityId<T> {
-
-    private static Long count = 0L;
 
     private T value;
 
     private UniqueEntityIdType tpUniqueEntityId;
 
-    private UniqueEntityId(T value) throws Exception {
+    private UniqueEntityId(T value) {
 
         this.value = value;
         this.tpUniqueEntityId = getTypeByValue(value);
     }
 
-    public static UniqueEntityId createFromData(Object value) throws Exception{
+    public Long getAsNumber() {
+
+        return UniqueEntityIdType.BIG_INT.equals(tpUniqueEntityId)
+                ? Long.valueOf(value.toString())
+                : null;
+    }
+
+    public static UniqueEntityId createFromData(Object value) {
 
         if (isNull(value)) return null;
 
@@ -37,12 +47,12 @@ public class UniqueEntityId<T> {
         return new UniqueEntityId<>(Long.valueOf(value.toString()));
     }
 
-    public static UniqueEntityId generate(UniqueEntityIdType type) throws Exception {
+    public static UniqueEntityId generate(UniqueEntityIdType type) {
 
-        return new UniqueEntityId<>(UniqueEntityIdType.UUID.equals(type) ? UUID.randomUUID() : ++count);
+        return new UniqueEntityId<>(UniqueEntityIdType.UUID.equals(type) ? UUID.randomUUID() : -1L);
     }
 
-    private static UniqueEntityIdType getTypeByValue(Object value) throws Exception {
+    private static UniqueEntityIdType getTypeByValue(Object value) {
 
         if (value instanceof String) {
 
@@ -52,6 +62,6 @@ public class UniqueEntityId<T> {
             return UniqueEntityIdType.BIG_INT;
         }
 
-        throw new Exception("Tipo de dado não suportado para id");
+        throw new DomainException("Tipo de dado não suportado para id");
     }
 }

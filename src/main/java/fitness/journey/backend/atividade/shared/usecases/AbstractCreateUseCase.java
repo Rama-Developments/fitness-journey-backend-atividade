@@ -17,7 +17,7 @@ public class AbstractCreateUseCase<T extends AbstractEntity> implements IParamet
     protected IRepository<T> repository;
 
     @Override
-    public T execute(T input) throws Exception {
+    public T execute(T input){
 
         if (input.getId() == null) input.generateId();
 

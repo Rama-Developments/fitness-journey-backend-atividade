@@ -12,5 +12,4 @@ import lombok.AllArgsConstructor;
  * @since 1.0 (14/11/24)
  */
 @UseCase
-@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class FetchAtividades extends AbstractFetchUseCase<Atividade> {}

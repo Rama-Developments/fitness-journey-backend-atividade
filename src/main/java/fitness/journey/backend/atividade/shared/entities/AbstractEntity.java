@@ -22,8 +22,18 @@ public class AbstractEntity {
         return this._id;
     }
 
-    public void generateId() throws Exception {
+    public void setId(UniqueEntityId id) {
+
+        this._id = id;
+    }
+
+    public void generateId() {
 
         this._id = UniqueEntityId.generate(UniqueEntityIdType.BIG_INT);
+    }
+
+    protected void touch() {
+
+        this.dhAlteracao = LocalDateTime.now();
     }
 }

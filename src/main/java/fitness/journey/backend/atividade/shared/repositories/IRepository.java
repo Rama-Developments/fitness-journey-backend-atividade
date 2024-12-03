@@ -15,4 +15,8 @@ public interface IRepository<T> {
     T findById(UniqueEntityId id);
 
     T create(T entity);
+
+    T update(T entity);
+
+    List<T> findMany(List<UniqueEntityId> ids);
 }
