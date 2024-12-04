@@ -1,0 +1,16 @@
+name: Deploy on render
+
+on: 
+  pull_request: 
+    branches: ["main"] 
+
+  push: 
+    branches: ["main"] 
+
+jobs: 
+
+  deploy: 
+    runs_on: ubuntu-latest
+    
+    run: curl ${{ secrets.RENDER_HOOK_URL }}
+      
