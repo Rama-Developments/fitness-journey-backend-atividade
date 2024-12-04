@@ -8,8 +8,8 @@ on:
 
 jobs: 
 
-  deploy: 
-    runs_on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      run: curl ${{ secrets.RENDER_HOOK_URL }}
+      - run: curl ${{ secrets.RENDER_HOOK_URL }}
       
