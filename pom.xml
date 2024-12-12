@@ -10,7 +10,7 @@
     </parent>
     <groupId>fitness-journey</groupId>
     <artifactId>fitness-journey-backend-atividade</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>fitness-journey-backend-atividade</name>
     <description>fitness-journey-backend-atividade</description>
     <url/>
