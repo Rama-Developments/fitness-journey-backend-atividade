@@ -6,5 +6,5 @@ package fitness.journey.backend.atividade.shared.usecases;
  */
 public interface IUseCase<T> {
 
-    T execute() throws Exception;
+    T execute();
 }

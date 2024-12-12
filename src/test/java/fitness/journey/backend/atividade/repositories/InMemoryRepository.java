@@ -34,4 +34,16 @@ public class InMemoryRepository<T extends AbstractEntity> implements IRepository
 
         return entity;
     }
+
+    @Override
+    public T update(T entity) {
+
+        return null;
+    }
+
+    @Override
+    public List<T> findMany(List<UniqueEntityId> ids) {
+
+        return List.of();
+    }
 }
