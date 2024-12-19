@@ -1,19 +1,24 @@
 package fitness.journey.backend.atividade.shared.http.controllers;
 
+import static java.util.Objects.nonNull;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import fitness.journey.backend.atividade.shared.entities.AbstractEntity;
 import fitness.journey.backend.atividade.shared.i18n.I18nService;
 import fitness.journey.backend.atividade.shared.mapper.HttpMapper;
 import fitness.journey.backend.atividade.shared.usecases.AbstractCreateUseCase;
 import fitness.journey.backend.atividade.shared.usecases.AbstractFetchUseCase;
+import fitness.journey.backend.atividade.shared.usecases.AbstractFindOneUseCase;
 
 /**
  * @author stevenreis
@@ -23,6 +28,9 @@ public class AbstractController<T extends AbstractEntity, P> {
 
     @Autowired(required = false)
     protected AbstractFetchUseCase<T> fetchUseCase;
+
+    @Autowired(required = false)
+    protected AbstractFindOneUseCase<T> findOneUseCase;
 
     @Autowired(required = false)
     protected AbstractCreateUseCase<T> createUseCase;
@@ -37,6 +45,14 @@ public class AbstractController<T extends AbstractEntity, P> {
     public ResponseEntity findAll() {
 
         return ok(httpMapper.mapList(fetchUseCase.execute()));
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity findById(@PathVariable("id") Long id) {
+
+        T domainEntity = findOneUseCase.execute(id);
+
+        return nonNull(domainEntity) ? ok(httpMapper.map(domainEntity)) : noContent();
     }
 
     @PostMapping
