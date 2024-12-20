@@ -2,6 +2,7 @@ package fitness.journey.backend.atividade.domain.application.usecases.dtos;
 
 import java.math.BigDecimal;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@AllArgsConstructor
 public class ExercicioExecucaoRequestDto {
 
     private Long idExercicio;

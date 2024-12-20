@@ -13,11 +13,7 @@ import lombok.Setter;
 @Setter
 public class ExercicioExecucaoPresenter {
 
-    private Long idExercicioExecucao;
-
     private Long idExercicio;
-
-    private String dsExercicio;
 
     private BigDecimal vlCarga;
 

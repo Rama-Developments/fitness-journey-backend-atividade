@@ -1,4 +1,4 @@
-package fitness.journey.backend.atividade.infrastructure.http.mappers;
+package fitness.journey.backend.atividade.infrastructure.http.adapters.mappers;
 
 import fitness.journey.backend.atividade.domain.enterprise.entities.ExercicioExecucao;
 import fitness.journey.backend.atividade.infrastructure.http.presenters.ExercicioExecucaoPresenter;
@@ -17,8 +17,6 @@ public class HttpExercicioExecucaoMapper implements HttpMapper<ExercicioExecucao
 
         var presenter = new ExercicioExecucaoPresenter();
 
-        presenter.setIdExercicioExecucao(input.getId().getAsNumber());
-        presenter.setDsExercicio(input.getDsExercicio());
         presenter.setIdExercicio(input.getIdExercicio().getAsNumber());
         presenter.setNrSequencia(input.getNrSequencia());
         presenter.setQtRepeticao(input.getQtRepeticao());

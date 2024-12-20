@@ -27,6 +27,7 @@ public class ExercicioMapper implements AbstractMapper<Exercicio, ExercicioEntit
         domain.setDsExercicio(raw.getDsExercicio());
         domain.setId(UniqueEntityId.createFromData(raw.getIdExercicio()));
 
+
         return domain;
     }
 
@@ -37,6 +38,7 @@ public class ExercicioMapper implements AbstractMapper<Exercicio, ExercicioEntit
 
         entity.setIdExercicio(domain.getId().getAsNumber());
         entity.setDsExercicio(domain.getDsExercicio());
+
 
         return entity;
     }

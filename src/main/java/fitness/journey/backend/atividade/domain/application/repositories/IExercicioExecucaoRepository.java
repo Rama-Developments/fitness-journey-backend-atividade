@@ -1,9 +1,9 @@
 package fitness.journey.backend.atividade.domain.application.repositories;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import fitness.journey.backend.atividade.domain.enterprise.entities.ExercicioExecucao;
-import fitness.journey.backend.atividade.shared.entities.UniqueEntityId;
 import fitness.journey.backend.atividade.shared.repositories.IRepository;
 
 /**
@@ -12,5 +12,7 @@ import fitness.journey.backend.atividade.shared.repositories.IRepository;
  */
 public interface IExercicioExecucaoRepository extends IRepository<ExercicioExecucao> {
 
-    List<ExercicioExecucao> findAllByIdAtividadeExecucao(UniqueEntityId idAtividadeExecucao);
+    List<ExercicioExecucao> findExecucoesByDiaAndIdExercicio(Long idExercicio, LocalDateTime dtInicio, LocalDateTime dtFim);
+
+    List<ExercicioExecucao> findExecucoesByDia(LocalDateTime dtInicio, LocalDateTime dtFim);
 }

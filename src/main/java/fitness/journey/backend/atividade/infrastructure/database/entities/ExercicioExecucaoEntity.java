@@ -1,6 +1,7 @@
 package fitness.journey.backend.atividade.infrastructure.database.entities;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,11 +31,7 @@ public class ExercicioExecucaoEntity {
     @JoinColumn(name = "id_exercicio", nullable = false)
     private ExercicioEntity exercicio;
 
-    @ManyToOne
-    @JoinColumn(name = "id_atividade_execucao", nullable = false)
-    private AtividadeExecucaoEntity atividade;
-
-    private String dsExercicio;
+    private LocalDateTime dhExecucao;
 
     private Integer nrSequencia;
 

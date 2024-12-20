@@ -1,6 +1,7 @@
 package fitness.journey.backend.atividade.domain.enterprise.entities;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import fitness.journey.backend.atividade.shared.entities.AbstractEntity;
 import fitness.journey.backend.atividade.shared.entities.UniqueEntityId;
@@ -19,11 +20,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ExercicioExecucao extends AbstractEntity {
 
-    private UniqueEntityId idAtividadeExecucao;
-
     private UniqueEntityId idExercicio;
 
-    private String dsExercicio;
+    private LocalDateTime dhExecucao;
 
     private BigDecimal vlCarga;
 

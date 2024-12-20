@@ -1,5 +1,7 @@
 package fitness.journey.backend.atividade.infrastructure.http.presenters;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,4 +16,6 @@ public class ExercicioPresenter {
     private Long idExercicio;
 
     private String dsExercicio;
+
+    private List<ExercicioExecucaoPresenter> execucoes;
 }
