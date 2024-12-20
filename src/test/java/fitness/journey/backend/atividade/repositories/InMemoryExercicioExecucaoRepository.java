@@ -20,4 +20,10 @@ public class InMemoryExercicioExecucaoRepository extends InMemoryRepository<Exer
                 .filter(item -> item.getDhExecucao().isAfter(LocalDate.now().atStartOfDay()))
                 .toList();
     }
+
+    @Override
+    public List<ExercicioExecucao> findExecucoesByDia(LocalDateTime dtInicio, LocalDateTime dtFim) {
+
+        return List.of();
+    }
 }
