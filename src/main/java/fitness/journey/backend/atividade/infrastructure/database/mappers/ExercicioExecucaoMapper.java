@@ -1,11 +1,8 @@
 package fitness.journey.backend.atividade.infrastructure.database.mappers;
 
-import static java.util.Objects.nonNull;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import fitness.journey.backend.atividade.domain.enterprise.entities.ExercicioExecucao;
-import fitness.journey.backend.atividade.infrastructure.database.entities.AtividadeExecucaoEntity;
 import fitness.journey.backend.atividade.infrastructure.database.entities.ExercicioEntity;
 import fitness.journey.backend.atividade.infrastructure.database.entities.ExercicioExecucaoEntity;
 import fitness.journey.backend.atividade.shared.annotations.Mapper;
@@ -27,13 +24,11 @@ public class ExercicioExecucaoMapper implements AbstractMapper<ExercicioExecucao
         var domain = new ExercicioExecucao();
 
         domain.setId(UniqueEntityId.createFromData(entity.getIdExercicioExecucao()));
-        domain.setDsExercicio(entity.getDsExercicio());
         domain.setIdExercicio(UniqueEntityId.createFromData(entity.getExercicio().getIdExercicio()));
-        if (nonNull(entity.getAtividade())) {
-            domain.setIdAtividadeExecucao(UniqueEntityId.createFromData(entity.getAtividade().getIdAtividadeExecucao()));
-        }
         domain.setVlCarga(entity.getVlCarga());
         domain.setQtRepeticao(entity.getQtRepeticao());
+        domain.setDhExecucao(entity.getDhExecucao());
+        domain.setNrSequencia(entity.getNrSequencia());
 
         return domain;
     }
@@ -44,12 +39,11 @@ public class ExercicioExecucaoMapper implements AbstractMapper<ExercicioExecucao
         var entity = new ExercicioExecucaoEntity();
 
         entity.setExercicio(new ExercicioEntity());
-        entity.setDsExercicio(domain.getDsExercicio());
         entity.getExercicio().setIdExercicio(domain.getIdExercicio().getAsNumber());
         entity.setVlCarga(domain.getVlCarga());
         entity.setQtRepeticao(domain.getQtRepeticao());
-        entity.setAtividade(new AtividadeExecucaoEntity());
-        entity.getAtividade().setIdAtividadeExecucao(domain.getIdAtividadeExecucao().getAsNumber());
+        entity.setDhExecucao(domain.getDhExecucao());
+        entity.setNrSequencia(domain.getNrSequencia());
 
         return entity;
     }

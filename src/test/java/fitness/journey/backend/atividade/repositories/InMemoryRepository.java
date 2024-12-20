@@ -24,7 +24,7 @@ public class InMemoryRepository<T extends AbstractEntity> implements IRepository
     @Override
     public T findById(UniqueEntityId id) {
 
-        return this.items.stream().filter(item -> item.getId().equals(id)).findFirst().orElse(null);
+        return this.items.stream().filter(item -> item.getId().getAsNumber().equals(id.getAsNumber())).findFirst().orElse(null);
     }
 
     @Override

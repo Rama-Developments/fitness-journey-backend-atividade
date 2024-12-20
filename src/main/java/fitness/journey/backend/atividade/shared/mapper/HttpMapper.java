@@ -1,6 +1,7 @@
 package fitness.journey.backend.atividade.shared.mapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author stevenreis
@@ -12,6 +13,6 @@ public interface HttpMapper<I, O> {
 
     default List<O> mapList(List<I> input) {
 
-        return input.stream().map(this::map).toList();
+        return input.stream().map(this::map).collect(Collectors.toList());
     }
 }
