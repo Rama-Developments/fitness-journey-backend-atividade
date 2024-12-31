@@ -1,4 +1,4 @@
-package fitness.journey.backend.atividade.shared.session;
+package fitness.journey.backend.atividade.infrastructure.session;
 
 import fitness.journey.backend.atividade.shared.exceptions.DomainException;
 

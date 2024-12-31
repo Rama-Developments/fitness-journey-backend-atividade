@@ -1,7 +1,8 @@
-package fitness.journey.backend.atividade.shared.repositories;
+package fitness.journey.backend.atividade.infrastructure.database.repositories;
 
 import java.util.List;
 
+import fitness.journey.backend.atividade.shared.repositories.IRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 

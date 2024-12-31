@@ -3,7 +3,7 @@ package fitness.journey.backend.atividade.infrastructure.database.repositories.u
 import fitness.journey.backend.atividade.domain.application.repositories.IUsuarioRepository;
 import fitness.journey.backend.atividade.domain.enterprise.entities.Usuario;
 import fitness.journey.backend.atividade.infrastructure.database.entities.UsuarioEntity;
-import fitness.journey.backend.atividade.shared.repositories.AbstractRepository;
+import fitness.journey.backend.atividade.infrastructure.database.repositories.AbstractRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

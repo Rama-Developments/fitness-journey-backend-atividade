@@ -1,6 +1,5 @@
-package fitness.journey.backend.atividade.shared.http.controllers;
+package fitness.journey.backend.atividade.infrastructure.http.controllers.response;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import fitness.journey.backend.atividade.domain.application.repositories.IExercicioExecucaoRepository;
 import fitness.journey.backend.atividade.domain.enterprise.entities.ExercicioExecucao;
 import fitness.journey.backend.atividade.infrastructure.database.entities.ExercicioExecucaoEntity;
-import fitness.journey.backend.atividade.shared.repositories.AbstractRepository;
+import fitness.journey.backend.atividade.infrastructure.database.repositories.AbstractRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 

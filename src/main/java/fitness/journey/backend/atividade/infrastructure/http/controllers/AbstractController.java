@@ -1,17 +1,16 @@
-package fitness.journey.backend.atividade.shared.http.controllers;
+package fitness.journey.backend.atividade.infrastructure.http.controllers;
 
 import static java.util.Objects.nonNull;
 
 import java.util.List;
 
+import fitness.journey.backend.atividade.infrastructure.http.controllers.response.DefaultResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import fitness.journey.backend.atividade.shared.entities.AbstractEntity;
 import fitness.journey.backend.atividade.shared.i18n.I18nService;

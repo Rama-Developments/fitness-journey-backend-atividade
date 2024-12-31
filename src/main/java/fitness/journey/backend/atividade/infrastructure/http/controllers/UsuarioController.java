@@ -4,7 +4,7 @@ import fitness.journey.backend.atividade.domain.application.usecases.CreateUsuar
 import fitness.journey.backend.atividade.domain.application.usecases.FindUsuarioById;
 import fitness.journey.backend.atividade.domain.application.usecases.dtos.CreateUsuarioRequestDto;
 import fitness.journey.backend.atividade.infrastructure.http.ports.IHttpUsuarioMapper;
-import fitness.journey.backend.atividade.shared.http.controllers.DefaultResponseEntity;
+import fitness.journey.backend.atividade.infrastructure.http.controllers.response.DefaultResponseEntity;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,14 +20,7 @@ import fitness.journey.backend.atividade.domain.application.usecases.dtos.Exerci
 import fitness.journey.backend.atividade.domain.enterprise.entities.Exercicio;
 import fitness.journey.backend.atividade.infrastructure.http.ports.IHttpExercicioMapper;
 import fitness.journey.backend.atividade.shared.filtro.Filtro;
-import fitness.journey.backend.atividade.shared.http.controllers.AbstractController;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author stevenreis

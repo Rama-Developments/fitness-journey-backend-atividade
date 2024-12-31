@@ -1,6 +1,6 @@
 package fitness.journey.backend.atividade.shared.usecases;
 
-import fitness.journey.backend.atividade.shared.session.UsuarioSessionContextHolder;
+import fitness.journey.backend.atividade.infrastructure.session.UsuarioSessionContextHolder;
 
 /**
  * @author stevenreis
