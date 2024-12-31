@@ -1,19 +1,14 @@
 name: Deploy on render
 
-on: 
-  pull_request: 
-    branches: ["master"]
-  push: 
-    branches: ["master"]
+on:
+  workflow_run:
+    workflows: ["Release Version"]
+    types:
+      - completed
 
 jobs: 
 
   deploy:
-    uses: kamilchodola/wait-for-workflow-action@1.1.0
-    with:
-      GITHUB_TOKEN: ${{ github.token }}
-      workflow_id: ./.github/workflows/build-docker-image-latest
-      repo_name: 'health-app-backend-atividade'
-      org_name: 'Rama-Developments'
+    uses: ubuntu-latest
     steps:
       - run: curl ${{ secrets.RENDER_HOOK_URL }}
