@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import fitness.journey.backend.atividade.domain.application.usecases.CreateExercicio;
 import fitness.journey.backend.atividade.domain.application.usecases.ExecutarExercicio;
 import fitness.journey.backend.atividade.domain.application.usecases.FetchExercicio;
 import fitness.journey.backend.atividade.domain.application.usecases.FindExecucoesByFiltro;
@@ -40,12 +41,20 @@ public class ExercicioController extends AbstractController<Exercicio, Exercicio
 
     private final FetchExercicio fetchExercicio;
 
+    private final CreateExercicio createExercicio;
+
     @Override
     public ResponseEntity findAll() {
 
         List<Exercicio> exercicios = fetchExercicio.execute();
 
         return ok(exercicioMapper.mapList(exercicios));
+    }
+
+    @Override
+    public ResponseEntity create(Exercicio entity) {
+
+        return created(exercicioMapper.map(createExercicio.execute(entity)));
     }
 
     @PostMapping("executar")
