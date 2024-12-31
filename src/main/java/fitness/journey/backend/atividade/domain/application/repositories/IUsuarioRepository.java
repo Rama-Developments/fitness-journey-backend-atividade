@@ -5,5 +5,5 @@ import fitness.journey.backend.atividade.shared.repositories.IRepository;
 
 public interface IUsuarioRepository extends IRepository<Usuario> {
 
-    Usuario findByNome(String dsNome);
+    Usuario findByEmail(String dsEmail);
 }

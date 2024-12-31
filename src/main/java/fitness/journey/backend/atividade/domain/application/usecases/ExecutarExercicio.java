@@ -48,7 +48,7 @@ public class ExecutarExercicio implements IUseCase<ExercicioExecucaoRequestDto, 
                 execucoesDoDia.size() + 1,
                 request.getQtRepeticao(),
                 null,
-                UniqueEntityId.createFromData(1L))
+                UniqueEntityId.createFromData(getIdUsuarioLogado()))
         );
 
         return null;

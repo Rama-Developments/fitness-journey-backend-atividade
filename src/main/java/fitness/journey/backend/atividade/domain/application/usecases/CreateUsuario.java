@@ -8,6 +8,7 @@ import fitness.journey.backend.atividade.shared.usecases.IUseCase;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @UseCase
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -15,12 +16,14 @@ public class CreateUsuario implements IUseCase<CreateUsuarioRequestDto, Usuario>
 
     private final @NonNull IUsuarioRepository repository;
 
+    private final @NonNull PasswordEncoder passwordEncoder;
+
     @Override
     public Usuario execute(CreateUsuarioRequestDto input) {
 
         var usuario = new Usuario(
                 input.getDsNome(),
-                input.getDsSenha(),
+                passwordEncoder.encode(input.getDsSenha()),
                 input.getDsEmail()
         );
 

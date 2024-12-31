@@ -16,8 +16,8 @@ public class UsuarioRepository extends AbstractRepository<Usuario, UsuarioEntity
     private final @NonNull JpaUsuarioRepository db;
 
     @Override
-    public Usuario findByNome(String dsNome) {
+    public Usuario findByEmail(String dsEmail) {
 
-        return abstractMapper.toDomain(db.findByNome(dsNome));
+        return abstractMapper.toDomain(db.findByEmail(dsEmail));
     }
 }

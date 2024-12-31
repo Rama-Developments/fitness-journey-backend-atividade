@@ -12,7 +12,7 @@ public interface JpaUsuarioRepository extends JpaRepository<UsuarioEntity, Long>
         select
             a
         from UsuarioEntity a
-        where a.dsNome = ?1
+        where a.dsEmail = ?1
     """)
-    UsuarioEntity findByNome(String nome);
+    UsuarioEntity findByEmail(String email);
 }
