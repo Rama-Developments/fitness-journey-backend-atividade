@@ -1,0 +1,14 @@
+name: Deploy on render
+
+on:
+  workflow_run:
+    workflows: ["Criar imagem docker ambiente producao"]
+    types:
+      - completed
+
+jobs: 
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl ${{ secrets.RENDER_HOOK_URL }}
