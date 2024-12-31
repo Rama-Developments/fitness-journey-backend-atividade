@@ -1,4 +1,6 @@
 package fitness.journey.backend.atividade.infrastructure.http.controllers.response;
 
-public record LoginResponse(String accessToken) {
+import fitness.journey.backend.atividade.infrastructure.http.presenters.UsuarioPresenter;
+
+public record LoginResponse(UsuarioPresenter data, String accessToken) {
 }

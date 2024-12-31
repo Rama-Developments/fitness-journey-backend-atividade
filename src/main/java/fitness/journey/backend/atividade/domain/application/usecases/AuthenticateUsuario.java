@@ -1,6 +1,8 @@
 package fitness.journey.backend.atividade.domain.application.usecases;
 
+import fitness.journey.backend.atividade.domain.application.repositories.IUsuarioRepository;
 import fitness.journey.backend.atividade.domain.application.usecases.dtos.AuthenticationRequestDto;
+import fitness.journey.backend.atividade.domain.application.usecases.dtos.AuthenticationResponseDto;
 import fitness.journey.backend.atividade.domain.enterprise.entities.Usuario;
 import fitness.journey.backend.atividade.infrastructure.services.JwtService;
 import fitness.journey.backend.atividade.shared.annotations.UseCase;
@@ -13,17 +15,22 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 
 @UseCase
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class AuthenticateUsuario implements IUseCase<AuthenticationRequestDto, String> {
+public class AuthenticateUsuario implements IUseCase<AuthenticationRequestDto, AuthenticationResponseDto> {
 
     private final @NonNull AuthenticationManager authenticationManager;
 
     private final @NonNull JwtService jwtService;
 
+    private final @NonNull IUsuarioRepository usuarioRepository;
+
     @Override
-    public String execute(AuthenticationRequestDto input) {
+    public AuthenticationResponseDto execute(AuthenticationRequestDto input) {
 
         var usernamePassword = new UsernamePasswordAuthenticationToken(input.getDsEmail(), input.getDsSenha());
 
-        return jwtService.generateToken((Usuario) authenticationManager.authenticate(usernamePassword).getPrincipal());
+        return new AuthenticationResponseDto(
+                usuarioRepository.findByEmail(input.getDsEmail()),
+                jwtService.generateToken((Usuario) authenticationManager.authenticate(usernamePassword).getPrincipal())
+        );
     }
 }
