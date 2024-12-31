@@ -58,13 +58,7 @@ public class AbstractController<T extends AbstractEntity, P> {
     @PostMapping
     public ResponseEntity create(@RequestBody T entity) {
 
-        try {
-
-            return created(httpMapper.map(createUseCase.execute(entity)));
-        } catch (Exception ex) {
-
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-        }
+        return created(httpMapper.map(createUseCase.execute(entity)));
     }
 
     protected DefaultResponseEntity created(Object data) {
