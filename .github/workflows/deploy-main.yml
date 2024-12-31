@@ -1,4 +1,11 @@
 name: Deploy on render
+uses: kamilchodola/wait-for-workflow-action@1.1.0
+
+with:
+  GITHUB_TOKEN: ${{ github.token }}
+  workflow_id: 'build-docker-image-latest.yml'
+  repo_name: 'health-app-backend-atividade'
+  org_name: 'Rama-Developments'
 
 on: 
   pull_request: 
