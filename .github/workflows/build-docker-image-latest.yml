@@ -2,7 +2,9 @@ name: Criar imagem docker ambiente producao
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
+  push:
+    branches: [ "master" ]
 
 jobs:
 
