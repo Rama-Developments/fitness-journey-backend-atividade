@@ -32,6 +32,6 @@ public class FetchExerciciosTest {
 
         exercicioRepository.items.add(new Exercicio("Remada curvada", null));
 
-        assertEquals(1, sut.execute().size());
+        assertEquals(1, sut.execute(null).size());
     }
 }
