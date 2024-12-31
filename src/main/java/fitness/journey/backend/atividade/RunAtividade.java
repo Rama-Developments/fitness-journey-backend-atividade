@@ -21,7 +21,8 @@ public class RunAtividade {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("*")
-                        .allowedMethods("GET", "PUT", "OPTIONS", "POST", "DELETE");
+                        .allowedMethods("GET", "PUT", "OPTIONS", "POST", "DELETE")
+                        .allowCredentials(true);
             }
         };
     }
