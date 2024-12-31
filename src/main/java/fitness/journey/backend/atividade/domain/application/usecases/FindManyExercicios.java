@@ -8,7 +8,7 @@ import fitness.journey.backend.atividade.domain.application.repositories.IExerci
 import fitness.journey.backend.atividade.domain.enterprise.entities.Exercicio;
 import fitness.journey.backend.atividade.shared.annotations.UseCase;
 import fitness.journey.backend.atividade.shared.entities.UniqueEntityId;
-import fitness.journey.backend.atividade.shared.usecases.IParameteredUseCase;
+import fitness.journey.backend.atividade.shared.usecases.IUseCase;
 import lombok.AllArgsConstructor;
 
 /**
@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
  */
 @UseCase
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class FindManyExercicios implements IParameteredUseCase<List<UniqueEntityId>, List<Exercicio>> {
+public class FindManyExercicios implements IUseCase<List<UniqueEntityId>, List<Exercicio>> {
 
     private final IExercicioRepository exercicioRepository;
 

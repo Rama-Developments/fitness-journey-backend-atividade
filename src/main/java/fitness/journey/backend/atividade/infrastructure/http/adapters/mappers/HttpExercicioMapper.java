@@ -1,10 +1,5 @@
 package fitness.journey.backend.atividade.infrastructure.http.adapters.mappers;
 
-import java.util.Comparator;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import fitness.journey.backend.atividade.domain.application.repositories.IExercicioRepository;
 import fitness.journey.backend.atividade.domain.enterprise.entities.Exercicio;
 import fitness.journey.backend.atividade.domain.enterprise.entities.ExercicioExecucao;
@@ -16,6 +11,10 @@ import fitness.journey.backend.atividade.shared.entities.UniqueEntityId;
 import fitness.journey.backend.atividade.shared.mapper.HttpMapper;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author stevenreis

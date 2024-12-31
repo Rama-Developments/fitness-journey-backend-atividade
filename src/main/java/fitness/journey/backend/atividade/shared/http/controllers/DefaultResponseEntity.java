@@ -16,12 +16,6 @@ public class DefaultResponseEntity extends ResponseEntity<Object> {
 
     public String message;
 
-    public DefaultResponseEntity(Object data) {
-
-        super(Map.of("data", data), HttpStatus.OK);
-
-    }
-
     public DefaultResponseEntity(Object data, HttpStatus status) {
         super(status);
         this.data = data;
@@ -31,5 +25,15 @@ public class DefaultResponseEntity extends ResponseEntity<Object> {
         super(HttpStatus.CREATED);
         this.data = data;
         this.message = message;
+    }
+
+    public DefaultResponseEntity(Object data) {
+
+        super(Map.of("data", data), HttpStatus.OK);
+    }
+
+    public static DefaultResponseEntity created(Object data) {
+
+        return new DefaultResponseEntity(Map.of("data", data), HttpStatus.CREATED);
     }
 }

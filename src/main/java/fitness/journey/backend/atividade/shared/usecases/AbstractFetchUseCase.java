@@ -12,14 +12,14 @@ import lombok.Setter;
  * @author stevenreis
  * @since 1.0 (15/11/24)
  */
-public class AbstractFetchUseCase<T extends AbstractEntity> implements IUseCase<List<T>> {
+public class AbstractFetchUseCase<T extends AbstractEntity> implements IUseCase<Void, List<T>> {
 
     @Setter
     @Autowired(required = false)
     protected IRepository<T> repository;
 
     @Override
-    public List<T> execute() {
+    public List<T> execute(Void p) {
 
         return repository.fetch();
     }

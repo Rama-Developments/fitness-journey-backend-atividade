@@ -14,7 +14,7 @@ import fitness.journey.backend.atividade.domain.enterprise.entities.ExercicioExe
 import fitness.journey.backend.atividade.shared.annotations.UseCase;
 import fitness.journey.backend.atividade.shared.entities.UniqueEntityId;
 import fitness.journey.backend.atividade.shared.exceptions.DomainException;
-import fitness.journey.backend.atividade.shared.usecases.IParameteredUseCase;
+import fitness.journey.backend.atividade.shared.usecases.IUseCase;
 import lombok.AllArgsConstructor;
 
 /**
@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
  */
 @UseCase
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class ExecutarExercicio implements IParameteredUseCase<ExercicioExecucaoRequestDto, Void> {
+public class ExecutarExercicio implements IUseCase<ExercicioExecucaoRequestDto, Void> {
 
     private final IExercicioRepository exercicioRepository;
 
@@ -47,7 +47,8 @@ public class ExecutarExercicio implements IParameteredUseCase<ExercicioExecucaoR
                 request.getVlCarga(),
                 execucoesDoDia.size() + 1,
                 request.getQtRepeticao(),
-                null)
+                null,
+                UniqueEntityId.createFromData(1L))
         );
 
         return null;

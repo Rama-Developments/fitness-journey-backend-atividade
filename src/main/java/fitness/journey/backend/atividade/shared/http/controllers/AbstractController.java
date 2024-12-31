@@ -44,7 +44,7 @@ public class AbstractController<T extends AbstractEntity, P> {
     @GetMapping
     public ResponseEntity findAll() {
 
-        return ok(httpMapper.mapList(fetchUseCase.execute()));
+        return ok(httpMapper.mapList(fetchUseCase.execute(null)));
     }
 
     @GetMapping("{id}")

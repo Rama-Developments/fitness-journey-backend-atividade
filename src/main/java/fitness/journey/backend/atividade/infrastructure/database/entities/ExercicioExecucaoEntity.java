@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "exercicio_execucao")
+@Table(name = "exercicio_execucao", schema = "atividade")
 public class ExercicioExecucaoEntity {
 
     @Id

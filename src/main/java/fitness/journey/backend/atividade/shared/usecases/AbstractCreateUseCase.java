@@ -11,7 +11,7 @@ import fitness.journey.backend.atividade.shared.repositories.IRepository;
  * @author stevenreis
  * @since 1.0 (15/11/24)
  */
-public class AbstractCreateUseCase<T extends AbstractEntity> implements IParameteredUseCase<T, T> {
+public class AbstractCreateUseCase<T extends AbstractEntity> implements IUseCase<T, T> {
 
     @Autowired(required = false)
     protected IRepository<T> repository;

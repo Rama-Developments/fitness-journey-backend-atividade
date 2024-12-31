@@ -11,7 +11,7 @@ import lombok.Setter;
  * @author stevenreis
  * @since 1.0 (19/12/24)
  */
-public class AbstractFindOneUseCase<T extends AbstractEntity> implements IParameteredUseCase<Long, T> {
+public class AbstractFindOneUseCase<T extends AbstractEntity> implements IUseCase<Long, T> {
 
     @Setter
     @Autowired(required = false)

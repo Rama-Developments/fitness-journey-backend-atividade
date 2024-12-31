@@ -10,7 +10,7 @@ import fitness.journey.backend.atividade.domain.application.repositories.IExerci
 import fitness.journey.backend.atividade.domain.enterprise.entities.ExercicioExecucao;
 import fitness.journey.backend.atividade.shared.annotations.UseCase;
 import fitness.journey.backend.atividade.shared.filtro.Filtro;
-import fitness.journey.backend.atividade.shared.usecases.IParameteredUseCase;
+import fitness.journey.backend.atividade.shared.usecases.IUseCase;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
  */
 @UseCase
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class FindExecucoesByFiltro implements IParameteredUseCase<Filtro, List<ExercicioExecucao>> {
+public class FindExecucoesByFiltro implements IUseCase<Filtro, List<ExercicioExecucao>> {
 
     private final @NonNull IExercicioExecucaoRepository exercicioExecucaoRepository;
 

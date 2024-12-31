@@ -31,4 +31,6 @@ public class ExercicioExecucao extends AbstractEntity {
     private Integer qtRepeticao;
 
     private String dsObservacao;
+
+    private UniqueEntityId idUsuario;
 }

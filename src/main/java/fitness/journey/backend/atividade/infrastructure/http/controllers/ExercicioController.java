@@ -1,18 +1,5 @@
 package fitness.journey.backend.atividade.infrastructure.http.controllers;
 
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import fitness.journey.backend.atividade.domain.application.usecases.ExecutarExercicio;
 import fitness.journey.backend.atividade.domain.application.usecases.FetchExercicio;
 import fitness.journey.backend.atividade.domain.application.usecases.FindExecucoesByFiltro;
@@ -22,6 +9,12 @@ import fitness.journey.backend.atividade.infrastructure.http.ports.IHttpExercici
 import fitness.journey.backend.atividade.shared.filtro.Filtro;
 import fitness.journey.backend.atividade.shared.http.controllers.AbstractController;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author stevenreis
@@ -43,7 +36,7 @@ public class ExercicioController extends AbstractController<Exercicio, Exercicio
     @Override
     public ResponseEntity findAll() {
 
-        List<Exercicio> exercicios = fetchExercicio.execute();
+        List<Exercicio> exercicios = fetchExercicio.execute(null);
 
         return ok(exercicioMapper.mapList(exercicios));
     }
